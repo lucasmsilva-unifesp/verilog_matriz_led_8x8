@@ -1,0 +1,81 @@
+|led_matrix
+clk_in => clk_in.IN1
+button_in => _.IN1
+clk_out << clk_slow.DB_MAX_OUTPUT_PORT_TYPE
+button_out << out.DB_MAX_OUTPUT_PORT_TYPE
+data_out << data_cap.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|led_matrix|frequency_divider_1_second:frequency_divider_1_second
+Clk_25M => slow_clk~reg0.CLK
+Clk_25M => counter[0].CLK
+Clk_25M => counter[1].CLK
+Clk_25M => counter[2].CLK
+Clk_25M => counter[3].CLK
+Clk_25M => counter[4].CLK
+Clk_25M => counter[5].CLK
+Clk_25M => counter[6].CLK
+Clk_25M => counter[7].CLK
+Clk_25M => counter[8].CLK
+Clk_25M => counter[9].CLK
+Clk_25M => counter[10].CLK
+Clk_25M => counter[11].CLK
+Clk_25M => counter[12].CLK
+Clk_25M => counter[13].CLK
+Clk_25M => counter[14].CLK
+Clk_25M => counter[15].CLK
+Clk_25M => counter[16].CLK
+Clk_25M => counter[17].CLK
+Clk_25M => counter[18].CLK
+Clk_25M => counter[19].CLK
+Clk_25M => counter[20].CLK
+Clk_25M => counter[21].CLK
+Clk_25M => counter[22].CLK
+Clk_25M => counter[23].CLK
+Clk_25M => counter[24].CLK
+Clk_25M => counter[25].CLK
+Clk_25M => counter[26].CLK
+Clk_25M => counter[27].CLK
+Clk_25M => counter[28].CLK
+Clk_25M => counter[29].CLK
+Clk_25M => counter[30].CLK
+Clk_25M => counter[31].CLK
+slow_clk <= slow_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|led_matrix|DeBounce:DeBounce
+pb_1 => pb_1.IN1
+slow_clk => slow_clk.IN5
+pb_out <= pb_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|led_matrix|DeBounce:DeBounce|my_dff:d0
+DFF_CLOCK => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|led_matrix|DeBounce:DeBounce|my_dff:d1
+DFF_CLOCK => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|led_matrix|DeBounce:DeBounce|my_dff:d2
+DFF_CLOCK => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|led_matrix|DeBounce:DeBounce|my_dff:d3
+DFF_CLOCK => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|led_matrix|DeBounce:DeBounce|my_dff:d4
+DFF_CLOCK => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

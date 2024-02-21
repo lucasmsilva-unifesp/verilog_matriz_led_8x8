@@ -11,6 +11,9 @@
 *.jpg
 *.html
 *.bsf
+*.cdb
+*.hdb
+*.quiproj.14376.rdr.flock
 
 # ignore simulation output of ModelSim
 wlf*
