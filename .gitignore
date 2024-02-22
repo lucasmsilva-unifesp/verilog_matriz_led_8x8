@@ -13,7 +13,7 @@
 *.bsf
 *.cdb
 *.hdb
-*.quiproj.14376.rdr.flock
+*.quiproj.*
 
 # ignore simulation output of ModelSim
 wlf*

@@ -1,7 +1,7 @@
-module frequency_divider_1_second
+module frequency_divider_100_Hz
 #(
-	parameter COUNT_25MHZ = 25000000,
-	parameter COUNT_12MHZ = 12500000 
+	parameter COUNT_25MHZ = 2500, /*2500*/
+	parameter COUNT_12MHZ = 1250  /*1250*/
 )
 (
 	input Clk_25M, 

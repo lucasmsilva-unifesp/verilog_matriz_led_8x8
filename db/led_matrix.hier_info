@@ -2,8 +2,14 @@
 clk_in => clk_in.IN1
 button_in => _.IN1
 clk_out << clk_slow.DB_MAX_OUTPUT_PORT_TYPE
-button_out << out.DB_MAX_OUTPUT_PORT_TYPE
-data_out << data_cap.DB_MAX_OUTPUT_PORT_TYPE
+data_x1 << display:display.port2
+data_x2 << display:display.port3
+data_x3 << display:display.port4
+data_x4 << display:display.port5
+data_x5 << display:display.port6
+data_x6 << display:display.port7
+data_x7 << display:display.port8
+data_x8 << display:display.port9
 
 
 |led_matrix|frequency_divider_1_second:frequency_divider_1_second
@@ -77,5 +83,45 @@ Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 DFF_CLOCK => Q~reg0.CLK
 D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|led_matrix|display:display
+clk => led_act[0].CLK
+clk => led_act[1].CLK
+clk => led_act[2].CLK
+clk => led_act[3].CLK
+clk => led_act[4].CLK
+clk => x8.CLK
+clk => x7.CLK
+clk => x6.CLK
+clk => x5.CLK
+clk => x4.CLK
+clk => x3.CLK
+clk => x2.CLK
+clk => x1.CLK
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+data_led => always0.IN1
+led_x1 <= x1.DB_MAX_OUTPUT_PORT_TYPE
+led_x2 <= x2.DB_MAX_OUTPUT_PORT_TYPE
+led_x3 <= x3.DB_MAX_OUTPUT_PORT_TYPE
+led_x4 <= x4.DB_MAX_OUTPUT_PORT_TYPE
+led_x5 <= x5.DB_MAX_OUTPUT_PORT_TYPE
+led_x6 <= x6.DB_MAX_OUTPUT_PORT_TYPE
+led_x7 <= x7.DB_MAX_OUTPUT_PORT_TYPE
+led_x8 <= x8.DB_MAX_OUTPUT_PORT_TYPE
 
 
