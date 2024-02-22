@@ -1,15 +1,52 @@
 |led_matrix
-clk_in => clk_in.IN1
+clk_in => clk_in.IN2
 button_in => _.IN1
-clk_out << clk_slow.DB_MAX_OUTPUT_PORT_TYPE
-data_x1 << display:display.port2
-data_x2 << display:display.port3
-data_x3 << display:display.port4
-data_x4 << display:display.port5
-data_x5 << display:display.port6
-data_x6 << display:display.port7
-data_x7 << display:display.port8
-data_x8 << display:display.port9
+clk_out <= clk_slow.DB_MAX_OUTPUT_PORT_TYPE
+data_x1 <= display:display.port2
+data_x2 <= display:display.port3
+data_x3 <= display:display.port4
+data_x4 <= display:display.port5
+data_y1 <= display:display.port6
+data_y2 <= display:display.port7
+data_y3 <= display:display.port8
+data_y4 <= display:display.port9
+
+
+|led_matrix|frequency_divider_100_Hz:frequency_divider_100_Hz
+Clk_25M => slow_clk~reg0.CLK
+Clk_25M => counter[0].CLK
+Clk_25M => counter[1].CLK
+Clk_25M => counter[2].CLK
+Clk_25M => counter[3].CLK
+Clk_25M => counter[4].CLK
+Clk_25M => counter[5].CLK
+Clk_25M => counter[6].CLK
+Clk_25M => counter[7].CLK
+Clk_25M => counter[8].CLK
+Clk_25M => counter[9].CLK
+Clk_25M => counter[10].CLK
+Clk_25M => counter[11].CLK
+Clk_25M => counter[12].CLK
+Clk_25M => counter[13].CLK
+Clk_25M => counter[14].CLK
+Clk_25M => counter[15].CLK
+Clk_25M => counter[16].CLK
+Clk_25M => counter[17].CLK
+Clk_25M => counter[18].CLK
+Clk_25M => counter[19].CLK
+Clk_25M => counter[20].CLK
+Clk_25M => counter[21].CLK
+Clk_25M => counter[22].CLK
+Clk_25M => counter[23].CLK
+Clk_25M => counter[24].CLK
+Clk_25M => counter[25].CLK
+Clk_25M => counter[26].CLK
+Clk_25M => counter[27].CLK
+Clk_25M => counter[28].CLK
+Clk_25M => counter[29].CLK
+Clk_25M => counter[30].CLK
+Clk_25M => counter[31].CLK
+slow_clk <= slow_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |led_matrix|frequency_divider_1_second:frequency_divider_1_second
@@ -86,15 +123,15 @@ Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |led_matrix|display:display
-clk => led_act[0].CLK
-clk => led_act[1].CLK
-clk => led_act[2].CLK
-clk => led_act[3].CLK
 clk => led_act[4].CLK
-clk => x8.CLK
-clk => x7.CLK
-clk => x6.CLK
-clk => x5.CLK
+clk => led_act[3].CLK
+clk => led_act[2].CLK
+clk => led_act[1].CLK
+clk => led_act[0].CLK
+clk => y4.CLK
+clk => y3.CLK
+clk => y2.CLK
+clk => y1.CLK
 clk => x4.CLK
 clk => x3.CLK
 clk => x2.CLK
@@ -119,9 +156,9 @@ led_x1 <= x1.DB_MAX_OUTPUT_PORT_TYPE
 led_x2 <= x2.DB_MAX_OUTPUT_PORT_TYPE
 led_x3 <= x3.DB_MAX_OUTPUT_PORT_TYPE
 led_x4 <= x4.DB_MAX_OUTPUT_PORT_TYPE
-led_x5 <= x5.DB_MAX_OUTPUT_PORT_TYPE
-led_x6 <= x6.DB_MAX_OUTPUT_PORT_TYPE
-led_x7 <= x7.DB_MAX_OUTPUT_PORT_TYPE
-led_x8 <= x8.DB_MAX_OUTPUT_PORT_TYPE
+led_y1 <= y1.DB_MAX_OUTPUT_PORT_TYPE
+led_y2 <= y2.DB_MAX_OUTPUT_PORT_TYPE
+led_y3 <= y3.DB_MAX_OUTPUT_PORT_TYPE
+led_y4 <= y4.DB_MAX_OUTPUT_PORT_TYPE
 
 
