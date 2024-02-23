@@ -1,4 +1,10 @@
 module led_matrix
+#
+(
+	parameter ROW = 4,
+	parameter COLUMN = 4,
+	parameter PIXELS = 16
+)
 (
 	input clk_in, button_in,
 	output clk_out,
@@ -6,6 +12,7 @@ module led_matrix
 );
 
 wire clk_slow;
+wire clk_1Hz;
 wire clk_1_second;
 wire button_deBounce;
 
@@ -14,19 +21,21 @@ reg [0:15] leds_data[0:16];
 reg [0:4] led_act = 5'b00000;
 reg data_led;
 
-reg [0:5] frame;
+reg led = 1'b0;
+
+reg [0:4] frame = 5'b00000;
 
 frequency_divider_100_Hz frequency_divider_100_Hz(clk_in, clk_slow);
-frequency_divider_1_second frequency_divider_1_second(clk_in, clk_1_second);
+frequency_divider_1_second frequency_divider_1_second(clk_in, clk_1Hz);
 
-assign clk_out = clk_slow;
+DeBounce DeBounce(~button_in, clk_1Hz, button_deBounce);
 
-DeBounce DeBounce(~button_in, clk_slow, button_deBounce);
+assign clk_out = led;
 
-always begin @ (posedge clk_1_second)
+always begin @ (posedge button_deBounce)
 	frame = frame + 5'b00001;
 	
-	if (frame > 5'b10001)
+	if (frame > 5'b10000)
 	begin
 		frame = 5'b00000;
 	end

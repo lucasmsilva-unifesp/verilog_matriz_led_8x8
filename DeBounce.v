@@ -4,17 +4,15 @@ module DeBounce
 	output pb_out
 );
 
-	wire Q1,Q2,Q3,Q4,Q4_bar,Q0;
+	wire Q1,Q2,Q2_bar,Q0;
 	
 	my_dff d0(slow_clk, pb_1,Q0 );
 
 	my_dff d1(slow_clk, Q0,Q1 );
 	my_dff d2(slow_clk, Q1,Q2 );
-	my_dff d3(slow_clk, Q2,Q3 );
-	my_dff d4(slow_clk, Q3,Q4 );
 	
-	assign Q4_bar = ~Q4;
-	assign pb_out = Q1 & Q2 & Q3 & Q4_bar;
+	assign Q2_bar = ~Q2;
+	assign pb_out = Q1 & Q2_bar;
 	
 endmodule
 

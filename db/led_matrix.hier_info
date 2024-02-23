@@ -1,15 +1,15 @@
 |led_matrix
 clk_in => clk_in.IN2
 button_in => _.IN1
-clk_out <= clk_slow.DB_MAX_OUTPUT_PORT_TYPE
-data_x1 <= display:display.port2
-data_x2 <= display:display.port3
-data_x3 <= display:display.port4
-data_x4 <= display:display.port5
-data_y1 <= display:display.port6
-data_y2 <= display:display.port7
-data_y3 <= display:display.port8
-data_y4 <= display:display.port9
+clk_out << <GND>
+data_x1 << display:display.port2
+data_x2 << display:display.port3
+data_x3 << display:display.port4
+data_x4 << display:display.port5
+data_y1 << display:display.port6
+data_y2 << display:display.port7
+data_y3 << display:display.port8
+data_y4 << display:display.port9
 
 
 |led_matrix|frequency_divider_100_Hz:frequency_divider_100_Hz
@@ -88,7 +88,7 @@ slow_clk <= slow_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 |led_matrix|DeBounce:DeBounce
 pb_1 => pb_1.IN1
-slow_clk => slow_clk.IN5
+slow_clk => slow_clk.IN3
 pb_out <= pb_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -105,18 +105,6 @@ Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |led_matrix|DeBounce:DeBounce|my_dff:d2
-DFF_CLOCK => Q~reg0.CLK
-D => Q~reg0.DATAIN
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|led_matrix|DeBounce:DeBounce|my_dff:d3
-DFF_CLOCK => Q~reg0.CLK
-D => Q~reg0.DATAIN
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|led_matrix|DeBounce:DeBounce|my_dff:d4
 DFF_CLOCK => Q~reg0.CLK
 D => Q~reg0.DATAIN
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE

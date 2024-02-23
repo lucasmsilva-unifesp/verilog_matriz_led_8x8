@@ -21,10 +21,10 @@ always begin @ (posedge clk)
 		x2 = 1'b0;
 		x3 = 1'b0;
 		x4 = 1'b0;
-		y1 = 1'b0;
+		y1 = 1'b1;
 		y2 = 1'b1;
 		y3 = 1'b1;
-		y4 = 1'b1;
+		y4 = 1'b0;
 	end
 	else if (led_act == 5'b00010 & data_led)
 	begin
@@ -33,8 +33,8 @@ always begin @ (posedge clk)
 		x3 = 1'b0;
 		x4 = 1'b0;
 		y1 = 1'b1;
-		y2 = 1'b0;
-		y3 = 1'b1;
+		y2 = 1'b1;
+		y3 = 1'b0;
 		y4 = 1'b1;
 	end
 	else if (led_act == 5'b00011 & data_led)
@@ -44,8 +44,8 @@ always begin @ (posedge clk)
 		x3 = 1'b0;
 		x4 = 1'b0;
 		y1 = 1'b1;
-		y2 = 1'b1;
-		y3 = 1'b0;
+		y2 = 1'b0;
+		y3 = 1'b1;
 		y4 = 1'b1;
 	end
 	else if (led_act == 5'b00100 & data_led)
@@ -54,10 +54,10 @@ always begin @ (posedge clk)
 		x2 = 1'b0;
 		x3 = 1'b0;
 		x4 = 1'b0;
-		y1 = 1'b1;
+		y1 = 1'b0;
 		y2 = 1'b1;
 		y3 = 1'b1;
-		y4 = 1'b0;
+		y4 = 1'b1;
 	end
 	else if (led_act == 5'b00101 & data_led)
 	begin
@@ -65,10 +65,10 @@ always begin @ (posedge clk)
 		x2 = 1'b1;
 		x3 = 1'b0;
 		x4 = 1'b0;
-		y1 = 1'b0;
+		y1 = 1'b1;
 		y2 = 1'b1;
 		y3 = 1'b1;
-		y4 = 1'b1;
+		y4 = 1'b0;
 	end
 	else if (led_act == 5'b00110 & data_led)
 	begin
@@ -77,8 +77,8 @@ always begin @ (posedge clk)
 		x3 = 1'b0;
 		x4 = 1'b0;
 		y1 = 1'b1;
-		y2 = 1'b0;
-		y3 = 1'b1;
+		y2 = 1'b1;
+		y3 = 1'b0;
 		y4 = 1'b1;
 	end
 	else if (led_act == 5'b00111 & data_led)
@@ -88,8 +88,8 @@ always begin @ (posedge clk)
 		x3 = 1'b0;
 		x4 = 1'b0;
 		y1 = 1'b1;
-		y2 = 1'b1;
-		y3 = 1'b0;
+		y2 = 1'b0;
+		y3 = 1'b1;
 		y4 = 1'b1;
 	end
 	else if (led_act == 5'b01000 & data_led)
@@ -98,10 +98,10 @@ always begin @ (posedge clk)
 		x2 = 1'b1;
 		x3 = 1'b0;
 		x4 = 1'b0;
-		y1 = 1'b1;
+		y1 = 1'b0;
 		y2 = 1'b1;
 		y3 = 1'b1;
-		y4 = 1'b0;
+		y4 = 1'b1;
 	end
 	else if (led_act == 5'b01001 & data_led)
 	begin
@@ -109,10 +109,10 @@ always begin @ (posedge clk)
 		x2 = 1'b0;
 		x3 = 1'b1;
 		x4 = 1'b0;
-		y1 = 1'b0;
+		y1 = 1'b1;
 		y2 = 1'b1;
 		y3 = 1'b1;
-		y4 = 1'b1;
+		y4 = 1'b0;
 	end
 	else if (led_act == 5'b01010 & data_led)
 	begin
@@ -121,8 +121,8 @@ always begin @ (posedge clk)
 		x3 = 1'b1;
 		x4 = 1'b0;
 		y1 = 1'b1;
-		y2 = 1'b0;
-		y3 = 1'b1;
+		y2 = 1'b1;
+		y3 = 1'b0;
 		y4 = 1'b1;
 	end
 	else if (led_act == 5'b01011 & data_led)
@@ -132,8 +132,8 @@ always begin @ (posedge clk)
 		x3 = 1'b1;
 		x4 = 1'b0;
 		y1 = 1'b1;
-		y2 = 1'b1;
-		y3 = 1'b0;
+		y2 = 1'b0;
+		y3 = 1'b1;
 		y4 = 1'b1;
 	end
 	else if (led_act == 5'b01100 & data_led)
@@ -142,10 +142,10 @@ always begin @ (posedge clk)
 		x2 = 1'b0;
 		x3 = 1'b1;
 		x4 = 1'b0;
-		y1 = 1'b1;
+		y1 = 1'b0;
 		y2 = 1'b1;
 		y3 = 1'b1;
-		y4 = 1'b0;
+		y4 = 1'b1;
 	end
 	else if (led_act == 5'b01101 & data_led)
 	begin
@@ -153,12 +153,23 @@ always begin @ (posedge clk)
 		x2 = 1'b0;
 		x3 = 1'b0;
 		x4 = 1'b1;
-		y1 = 1'b0;
+		y1 = 1'b1;
 		y2 = 1'b1;
 		y3 = 1'b1;
-		y4 = 1'b1;
+		y4 = 1'b0;
 	end
 	else if (led_act == 5'b01110 & data_led)
+	begin
+		x1 = 1'b0;
+		x2 = 1'b0;
+		x3 = 1'b0;
+		x4 = 1'b1;
+		y1 = 1'b1;
+		y2 = 1'b1;
+		y3 = 1'b0;
+		y4 = 1'b1;
+	end
+	else if (led_act == 5'b01111 & data_led)
 	begin
 		x1 = 1'b0;
 		x2 = 1'b0;
@@ -169,27 +180,16 @@ always begin @ (posedge clk)
 		y3 = 1'b1;
 		y4 = 1'b1;
 	end
-	else if (led_act == 5'b01111 & data_led)
-	begin
-		x1 = 1'b0;
-		x2 = 1'b0;
-		x3 = 1'b0;
-		x4 = 1'b1;
-		y1 = 1'b1;
-		y2 = 1'b1;
-		y3 = 1'b0;
-		y4 = 1'b1;
-	end
 	else if (led_act == 5'b10000 & data_led)
 	begin
 		x1 = 1'b0;
 		x2 = 1'b0;
 		x3 = 1'b0;
 		x4 = 1'b1;
-		y1 = 1'b1;
+		y1 = 1'b0;
 		y2 = 1'b1;
 		y3 = 1'b1;
-		y4 = 1'b0;
+		y4 = 1'b1;
 	end
 	else
 	begin
