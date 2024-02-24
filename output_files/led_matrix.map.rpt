@@ -1,5 +1,5 @@
 Analysis & Synthesis report for led_matrix
-Fri Feb 23 16:47:39 2024
+Fri Feb 23 21:13:02 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -17,10 +17,11 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   9. General Register Statistics
  10. Inverted Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: frequency_divider_100_Hz:frequency_divider_100_Hz
- 13. Parameter Settings for User Entity Instance: frequency_divider_1_second:frequency_divider_1_second
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |led_matrix
+ 13. Parameter Settings for User Entity Instance: frequency_divider_100_Hz:frequency_divider_100_Hz
+ 14. Parameter Settings for User Entity Instance: frequency_divider_1_second:frequency_divider_1_second
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +47,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Feb 23 16:47:39 2024      ;
+; Analysis & Synthesis Status        ; Successful - Fri Feb 23 21:13:01 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; led_matrix                                 ;
 ; Top-level Entity Name              ; led_matrix                                 ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 131                                        ;
-;     Total combinational functions  ; 129                                        ;
-;     Dedicated logic registers      ; 91                                         ;
-; Total registers                    ; 91                                         ;
-; Total pins                         ; 11                                         ;
+; Total logic elements               ; 344                                        ;
+;     Total combinational functions  ; 336                                        ;
+;     Dedicated logic registers      ; 115                                        ;
+; Total registers                    ; 115                                        ;
+; Total pins                         ; 14                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -179,28 +180,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 131          ;
+; Estimated Total logic elements              ; 344          ;
 ;                                             ;              ;
-; Total combinational functions               ; 129          ;
+; Total combinational functions               ; 336          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 40           ;
-;     -- 3 input functions                    ; 14           ;
-;     -- <=2 input functions                  ; 75           ;
+;     -- 4 input functions                    ; 192          ;
+;     -- 3 input functions                    ; 54           ;
+;     -- <=2 input functions                  ; 90           ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 64           ;
+;     -- normal mode                          ; 271          ;
 ;     -- arithmetic mode                      ; 65           ;
 ;                                             ;              ;
-; Total registers                             ; 91           ;
-;     -- Dedicated logic registers            ; 91           ;
+; Total registers                             ; 115          ;
+;     -- Dedicated logic registers            ; 115          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 11           ;
+; I/O pins                                    ; 14           ;
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ; Maximum fan-out node                        ; clk_in~input ;
 ; Maximum fan-out                             ; 66           ;
-; Total fan-out                               ; 613          ;
-; Average fan-out                             ; 2.53         ;
+; Total fan-out                               ; 1450         ;
+; Average fan-out                             ; 3.03         ;
 +---------------------------------------------+--------------+
 
 
@@ -209,11 +210,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                               ; Library Name ;
 +------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+--------------+
-; |led_matrix                                                ; 129 (14)          ; 91 (9)       ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |led_matrix                                                       ; work         ;
-;    |DeBounce:DeBounce|                                     ; 2 (1)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce                                     ; work         ;
-;       |my_dff:d0|                                          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce|my_dff:d0                           ; work         ;
-;       |my_dff:d1|                                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce|my_dff:d1                           ; work         ;
-;       |my_dff:d2|                                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce|my_dff:d2                           ; work         ;
+; |led_matrix                                                ; 336 (219)         ; 115 (24)     ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |led_matrix                                                       ; work         ;
+;    |DeBounce:DeBounce_down|                                ; 1 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_down                                ; work         ;
+;       |my_dff:d0|                                          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_down|my_dff:d0                      ; work         ;
+;       |my_dff:d1|                                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_down|my_dff:d1                      ; work         ;
+;       |my_dff:d2|                                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_down|my_dff:d2                      ; work         ;
+;    |DeBounce:DeBounce_left|                                ; 1 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_left                                ; work         ;
+;       |my_dff:d0|                                          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_left|my_dff:d0                      ; work         ;
+;       |my_dff:d1|                                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_left|my_dff:d1                      ; work         ;
+;       |my_dff:d2|                                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_left|my_dff:d2                      ; work         ;
+;    |DeBounce:DeBounce_right|                               ; 1 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_right                               ; work         ;
+;       |my_dff:d0|                                          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_right|my_dff:d0                     ; work         ;
+;       |my_dff:d1|                                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_right|my_dff:d1                     ; work         ;
+;       |my_dff:d2|                                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_right|my_dff:d2                     ; work         ;
+;    |DeBounce:DeBounce_up|                                  ; 1 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_up                                  ; work         ;
+;       |my_dff:d0|                                          ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_up|my_dff:d0                        ; work         ;
+;       |my_dff:d1|                                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_up|my_dff:d1                        ; work         ;
+;       |my_dff:d2|                                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|DeBounce:DeBounce_up|my_dff:d2                        ; work         ;
 ;    |display:display|                                       ; 20 (20)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|display:display                                       ; work         ;
 ;    |frequency_divider_100_Hz:frequency_divider_100_Hz|     ; 47 (47)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|frequency_divider_100_Hz:frequency_divider_100_Hz     ; work         ;
 ;    |frequency_divider_1_second:frequency_divider_1_second| ; 46 (46)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_matrix|frequency_divider_1_second:frequency_divider_1_second ; work         ;
@@ -221,287 +234,67 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; leds_data[3][10]                        ; Merged with leds_data[16][15]          ;
-; leds_data[3][8]                         ; Merged with leds_data[16][15]          ;
-; leds_data[3][6]                         ; Merged with leds_data[16][15]          ;
-; leds_data[3][4]                         ; Merged with leds_data[16][15]          ;
-; leds_data[10][2]                        ; Merged with leds_data[16][15]          ;
-; leds_data[3][2]                         ; Merged with leds_data[16][15]          ;
-; leds_data[16][10]                       ; Merged with leds_data[16][15]          ;
-; leds_data[3][0]                         ; Merged with leds_data[16][15]          ;
-; leds_data[10][0]                        ; Merged with leds_data[16][15]          ;
-; leds_data[2][10]                        ; Merged with leds_data[16][15]          ;
-; leds_data[2][8]                         ; Merged with leds_data[16][15]          ;
-; leds_data[2][6]                         ; Merged with leds_data[16][15]          ;
-; leds_data[2][4]                         ; Merged with leds_data[16][15]          ;
-; leds_data[2][2]                         ; Merged with leds_data[16][15]          ;
-; leds_data[16][2]                        ; Merged with leds_data[16][15]          ;
-; leds_data[2][0]                         ; Merged with leds_data[16][15]          ;
-; leds_data[1][14]                        ; Merged with leds_data[16][15]          ;
-; leds_data[9][6]                         ; Merged with leds_data[16][15]          ;
-; leds_data[1][10]                        ; Merged with leds_data[16][15]          ;
-; leds_data[1][8]                         ; Merged with leds_data[16][15]          ;
-; leds_data[1][6]                         ; Merged with leds_data[16][15]          ;
-; leds_data[13][2]                        ; Merged with leds_data[16][15]          ;
-; leds_data[1][4]                         ; Merged with leds_data[16][15]          ;
-; leds_data[9][2]                         ; Merged with leds_data[16][15]          ;
-; leds_data[1][0]                         ; Merged with leds_data[16][15]          ;
-; leds_data[1][2]                         ; Merged with leds_data[16][15]          ;
-; leds_data[9][0]                         ; Merged with leds_data[16][15]          ;
-; leds_data[0][14]                        ; Merged with leds_data[16][15]          ;
-; leds_data[0][10]                        ; Merged with leds_data[16][15]          ;
-; leds_data[0][8]                         ; Merged with leds_data[16][15]          ;
-; leds_data[0][6]                         ; Merged with leds_data[16][15]          ;
-; leds_data[0][4]                         ; Merged with leds_data[16][15]          ;
-; leds_data[0][2]                         ; Merged with leds_data[16][15]          ;
-; leds_data[16][0]                        ; Merged with leds_data[16][15]          ;
-; leds_data[16][13]                       ; Merged with leds_data[16][15]          ;
-; leds_data[16][9]                        ; Merged with leds_data[16][15]          ;
-; leds_data[16][1]                        ; Merged with leds_data[16][15]          ;
-; leds_data[9][1]                         ; Merged with leds_data[16][15]          ;
-; leds_data[1][1]                         ; Merged with leds_data[16][15]          ;
-; leds_data[3][7]                         ; Merged with leds_data[16][14]          ;
-; leds_data[10][3]                        ; Merged with leds_data[16][14]          ;
-; leds_data[3][3]                         ; Merged with leds_data[16][14]          ;
-; leds_data[16][3]                        ; Merged with leds_data[16][14]          ;
-; leds_data[2][15]                        ; Merged with leds_data[16][14]          ;
-; leds_data[2][11]                        ; Merged with leds_data[16][14]          ;
-; leds_data[2][7]                         ; Merged with leds_data[16][14]          ;
-; leds_data[2][3]                         ; Merged with leds_data[16][14]          ;
-; leds_data[1][15]                        ; Merged with leds_data[16][14]          ;
-; leds_data[9][7]                         ; Merged with leds_data[16][14]          ;
-; leds_data[1][11]                        ; Merged with leds_data[16][14]          ;
-; leds_data[13][3]                        ; Merged with leds_data[16][14]          ;
-; leds_data[1][7]                         ; Merged with leds_data[16][14]          ;
-; leds_data[9][3]                         ; Merged with leds_data[16][14]          ;
-; leds_data[0][15]                        ; Merged with leds_data[16][14]          ;
-; leds_data[1][3]                         ; Merged with leds_data[16][14]          ;
-; leds_data[0][11]                        ; Merged with leds_data[16][14]          ;
-; leds_data[0][7]                         ; Merged with leds_data[16][14]          ;
-; leds_data[0][3]                         ; Merged with leds_data[16][14]          ;
-; leds_data[0][0]                         ; Merged with leds_data[16][14]          ;
-; leds_data[8][6]                         ; Merged with leds_data[16][14]          ;
-; leds_data[8][2]                         ; Merged with leds_data[16][14]          ;
-; leds_data[16][8]                        ; Merged with leds_data[16][14]          ;
-; leds_data[8][0]                         ; Merged with leds_data[16][14]          ;
-; leds_data[7][6]                         ; Merged with leds_data[16][14]          ;
-; leds_data[7][4]                         ; Merged with leds_data[16][14]          ;
-; leds_data[12][2]                        ; Merged with leds_data[16][14]          ;
-; leds_data[7][2]                         ; Merged with leds_data[16][14]          ;
-; leds_data[16][12]                       ; Merged with leds_data[16][14]          ;
-; leds_data[7][0]                         ; Merged with leds_data[16][14]          ;
-; leds_data[6][6]                         ; Merged with leds_data[16][14]          ;
-; leds_data[6][4]                         ; Merged with leds_data[16][14]          ;
-; leds_data[6][2]                         ; Merged with leds_data[16][14]          ;
-; leds_data[16][6]                        ; Merged with leds_data[16][14]          ;
-; leds_data[6][0]                         ; Merged with leds_data[16][14]          ;
-; leds_data[5][10]                        ; Merged with leds_data[16][14]          ;
-; leds_data[5][6]                         ; Merged with leds_data[16][14]          ;
-; leds_data[5][4]                         ; Merged with leds_data[16][14]          ;
-; leds_data[11][2]                        ; Merged with leds_data[16][14]          ;
-; leds_data[5][2]                         ; Merged with leds_data[16][14]          ;
-; leds_data[5][0]                         ; Merged with leds_data[16][14]          ;
-; leds_data[11][0]                        ; Merged with leds_data[16][14]          ;
-; leds_data[4][10]                        ; Merged with leds_data[16][14]          ;
-; leds_data[4][6]                         ; Merged with leds_data[16][14]          ;
-; leds_data[4][4]                         ; Merged with leds_data[16][14]          ;
-; leds_data[4][2]                         ; Merged with leds_data[16][14]          ;
-; leds_data[16][4]                        ; Merged with leds_data[16][14]          ;
-; leds_data[4][0]                         ; Merged with leds_data[16][14]          ;
-; leds_data[7][1]                         ; Merged with leds_data[16][11]          ;
-; leds_data[5][1]                         ; Merged with leds_data[16][11]          ;
-; leds_data[11][1]                        ; Merged with leds_data[16][11]          ;
-; leds_data[8][1]                         ; Merged with leds_data[16][11]          ;
-; leds_data[3][1]                         ; Merged with leds_data[16][11]          ;
-; leds_data[12][1]                        ; Merged with leds_data[16][11]          ;
-; leds_data[6][1]                         ; Merged with leds_data[16][11]          ;
-; leds_data[4][1]                         ; Merged with leds_data[16][11]          ;
-; leds_data[10][1]                        ; Merged with leds_data[16][11]          ;
-; leds_data[0][1]                         ; Merged with leds_data[16][11]          ;
-; leds_data[2][1]                         ; Merged with leds_data[16][11]          ;
-; leds_data[4][9]                         ; Merged with leds_data[16][11]          ;
-; leds_data[3][9]                         ; Merged with leds_data[16][11]          ;
-; leds_data[2][9]                         ; Merged with leds_data[16][11]          ;
-; leds_data[0][9]                         ; Merged with leds_data[16][11]          ;
-; leds_data[1][9]                         ; Merged with leds_data[16][11]          ;
-; leds_data[8][5]                         ; Merged with leds_data[16][11]          ;
-; leds_data[7][5]                         ; Merged with leds_data[16][11]          ;
-; leds_data[6][5]                         ; Merged with leds_data[16][11]          ;
-; leds_data[5][5]                         ; Merged with leds_data[16][11]          ;
-; leds_data[16][5]                        ; Merged with leds_data[16][11]          ;
-; leds_data[4][5]                         ; Merged with leds_data[16][11]          ;
-; leds_data[3][5]                         ; Merged with leds_data[16][11]          ;
-; leds_data[2][5]                         ; Merged with leds_data[16][11]          ;
-; leds_data[0][13]                        ; Merged with leds_data[16][11]          ;
-; leds_data[1][5]                         ; Merged with leds_data[16][11]          ;
-; leds_data[0][5]                         ; Merged with leds_data[16][11]          ;
-; leds_data[8][7]                         ; Merged with leds_data[16][11]          ;
-; leds_data[8][3]                         ; Merged with leds_data[16][11]          ;
-; leds_data[7][7]                         ; Merged with leds_data[16][11]          ;
-; leds_data[12][3]                        ; Merged with leds_data[16][11]          ;
-; leds_data[7][3]                         ; Merged with leds_data[16][11]          ;
-; leds_data[16][7]                        ; Merged with leds_data[16][11]          ;
-; leds_data[6][11]                        ; Merged with leds_data[16][11]          ;
-; leds_data[6][7]                         ; Merged with leds_data[16][11]          ;
-; leds_data[6][3]                         ; Merged with leds_data[16][11]          ;
-; leds_data[5][11]                        ; Merged with leds_data[16][11]          ;
-; leds_data[14][3]                        ; Merged with leds_data[16][11]          ;
-; leds_data[5][7]                         ; Merged with leds_data[16][11]          ;
-; leds_data[11][3]                        ; Merged with leds_data[16][11]          ;
-; leds_data[5][3]                         ; Merged with leds_data[16][11]          ;
-; leds_data[4][11]                        ; Merged with leds_data[16][11]          ;
-; leds_data[4][7]                         ; Merged with leds_data[16][11]          ;
-; leds_data[4][3]                         ; Merged with leds_data[16][11]          ;
-; leds_data[10][7]                        ; Merged with leds_data[16][11]          ;
-; leds_data[3][11]                        ; Merged with leds_data[16][11]          ;
-; leds_data[14][1]                        ; Merged with leds_data[15][15]          ;
-; leds_data[12][9]                        ; Merged with leds_data[15][15]          ;
-; leds_data[7][9]                         ; Merged with leds_data[15][15]          ;
-; leds_data[14][9]                        ; Merged with leds_data[15][15]          ;
-; leds_data[6][9]                         ; Merged with leds_data[15][15]          ;
-; leds_data[11][9]                        ; Merged with leds_data[15][15]          ;
-; leds_data[5][9]                         ; Merged with leds_data[15][15]          ;
-; leds_data[15][9]                        ; Merged with leds_data[15][15]          ;
-; leds_data[10][9]                        ; Merged with leds_data[15][15]          ;
-; leds_data[13][9]                        ; Merged with leds_data[15][15]          ;
-; leds_data[9][9]                         ; Merged with leds_data[15][15]          ;
-; leds_data[8][9]                         ; Merged with leds_data[15][15]          ;
-; leds_data[14][13]                       ; Merged with leds_data[15][15]          ;
-; leds_data[7][13]                        ; Merged with leds_data[15][15]          ;
-; leds_data[12][5]                        ; Merged with leds_data[15][15]          ;
-; leds_data[15][13]                       ; Merged with leds_data[15][15]          ;
-; leds_data[6][13]                        ; Merged with leds_data[15][15]          ;
-; leds_data[11][13]                       ; Merged with leds_data[15][15]          ;
-; leds_data[14][5]                        ; Merged with leds_data[15][15]          ;
-; leds_data[5][13]                        ; Merged with leds_data[15][15]          ;
-; leds_data[11][5]                        ; Merged with leds_data[15][15]          ;
-; leds_data[4][13]                        ; Merged with leds_data[15][15]          ;
-; leds_data[10][13]                       ; Merged with leds_data[15][15]          ;
-; leds_data[13][13]                       ; Merged with leds_data[15][15]          ;
-; leds_data[3][13]                        ; Merged with leds_data[15][15]          ;
-; leds_data[10][5]                        ; Merged with leds_data[15][15]          ;
-; leds_data[15][5]                        ; Merged with leds_data[15][15]          ;
-; leds_data[2][13]                        ; Merged with leds_data[15][15]          ;
-; leds_data[9][13]                        ; Merged with leds_data[15][15]          ;
-; leds_data[13][5]                        ; Merged with leds_data[15][15]          ;
-; leds_data[1][13]                        ; Merged with leds_data[15][15]          ;
-; leds_data[9][5]                         ; Merged with leds_data[15][15]          ;
-; leds_data[8][13]                        ; Merged with leds_data[15][15]          ;
-; leds_data[12][13]                       ; Merged with leds_data[15][15]          ;
-; leds_data[12][11]                       ; Merged with leds_data[15][15]          ;
-; leds_data[7][15]                        ; Merged with leds_data[15][15]          ;
-; leds_data[12][7]                        ; Merged with leds_data[15][15]          ;
-; leds_data[7][11]                        ; Merged with leds_data[15][15]          ;
-; leds_data[14][11]                       ; Merged with leds_data[15][15]          ;
-; leds_data[6][15]                        ; Merged with leds_data[15][15]          ;
-; leds_data[11][15]                       ; Merged with leds_data[15][15]          ;
-; leds_data[14][7]                        ; Merged with leds_data[15][15]          ;
-; leds_data[11][11]                       ; Merged with leds_data[15][15]          ;
-; leds_data[15][11]                       ; Merged with leds_data[15][15]          ;
-; leds_data[5][15]                        ; Merged with leds_data[15][15]          ;
-; leds_data[11][7]                        ; Merged with leds_data[15][15]          ;
-; leds_data[4][15]                        ; Merged with leds_data[15][15]          ;
-; leds_data[10][15]                       ; Merged with leds_data[15][15]          ;
-; leds_data[13][15]                       ; Merged with leds_data[15][15]          ;
-; leds_data[10][11]                       ; Merged with leds_data[15][15]          ;
-; leds_data[15][7]                        ; Merged with leds_data[15][15]          ;
-; leds_data[3][15]                        ; Merged with leds_data[15][15]          ;
-; leds_data[13][11]                       ; Merged with leds_data[15][15]          ;
-; leds_data[9][15]                        ; Merged with leds_data[15][15]          ;
-; leds_data[13][7]                        ; Merged with leds_data[15][14]          ;
-; leds_data[9][11]                        ; Merged with leds_data[15][14]          ;
-; leds_data[15][3]                        ; Merged with leds_data[15][14]          ;
-; leds_data[8][15]                        ; Merged with leds_data[15][14]          ;
-; leds_data[12][15]                       ; Merged with leds_data[15][14]          ;
-; leds_data[8][11]                        ; Merged with leds_data[15][14]          ;
-; leds_data[14][15]                       ; Merged with leds_data[15][14]          ;
-; leds_data[12][12]                       ; Merged with leds_data[15][14]          ;
-; leds_data[14][14]                       ; Merged with leds_data[15][14]          ;
-; leds_data[8][4]                         ; Merged with leds_data[15][14]          ;
-; leds_data[12][10]                       ; Merged with leds_data[15][14]          ;
-; leds_data[12][8]                        ; Merged with leds_data[15][14]          ;
-; leds_data[7][14]                        ; Merged with leds_data[15][14]          ;
-; leds_data[14][12]                       ; Merged with leds_data[15][14]          ;
-; leds_data[7][12]                        ; Merged with leds_data[15][14]          ;
-; leds_data[12][6]                        ; Merged with leds_data[15][14]          ;
-; leds_data[7][10]                        ; Merged with leds_data[15][14]          ;
-; leds_data[7][8]                         ; Merged with leds_data[15][14]          ;
-; leds_data[12][4]                        ; Merged with leds_data[15][14]          ;
-; leds_data[14][10]                       ; Merged with leds_data[15][14]          ;
-; leds_data[12][0]                        ; Merged with leds_data[15][14]          ;
-; leds_data[6][14]                        ; Merged with leds_data[15][14]          ;
-; leds_data[14][8]                        ; Merged with leds_data[15][14]          ;
-; leds_data[6][12]                        ; Merged with leds_data[15][14]          ;
-; leds_data[11][14]                       ; Merged with leds_data[15][14]          ;
-; leds_data[6][10]                        ; Merged with leds_data[15][14]          ;
-; leds_data[15][12]                       ; Merged with leds_data[15][14]          ;
-; leds_data[6][8]                         ; Merged with leds_data[15][14]          ;
-; leds_data[11][12]                       ; Merged with leds_data[15][14]          ;
-; leds_data[14][6]                        ; Merged with leds_data[15][14]          ;
-; leds_data[11][10]                       ; Merged with leds_data[15][14]          ;
-; leds_data[11][8]                        ; Merged with leds_data[15][14]          ;
-; leds_data[5][14]                        ; Merged with leds_data[15][14]          ;
-; leds_data[14][4]                        ; Merged with leds_data[15][14]          ;
-; leds_data[5][12]                        ; Merged with leds_data[15][14]          ;
-; leds_data[11][6]                        ; Merged with leds_data[15][14]          ;
-; leds_data[15][10]                       ; Merged with leds_data[15][14]          ;
-; leds_data[5][8]                         ; Merged with leds_data[15][14]          ;
-; leds_data[11][4]                        ; Merged with leds_data[15][14]          ;
-; leds_data[14][2]                        ; Merged with leds_data[15][14]          ;
-; leds_data[4][14]                        ; Merged with leds_data[15][14]          ;
-; leds_data[14][0]                        ; Merged with leds_data[15][14]          ;
-; leds_data[4][12]                        ; Merged with leds_data[15][14]          ;
-; leds_data[10][14]                       ; Merged with leds_data[15][14]          ;
-; leds_data[15][8]                        ; Merged with leds_data[15][14]          ;
-; leds_data[4][8]                         ; Merged with leds_data[15][14]          ;
-; leds_data[10][12]                       ; Merged with leds_data[15][14]          ;
-; leds_data[13][14]                       ; Merged with leds_data[15][14]          ;
-; leds_data[10][10]                       ; Merged with leds_data[15][14]          ;
-; leds_data[10][8]                        ; Merged with leds_data[15][14]          ;
-; leds_data[3][14]                        ; Merged with leds_data[15][14]          ;
-; leds_data[13][12]                       ; Merged with leds_data[15][14]          ;
-; leds_data[3][12]                        ; Merged with leds_data[15][14]          ;
-; leds_data[10][6]                        ; Merged with leds_data[15][14]          ;
-; leds_data[15][6]                        ; Merged with leds_data[15][14]          ;
-; leds_data[10][4]                        ; Merged with leds_data[15][4]           ;
-; leds_data[13][10]                       ; Merged with leds_data[15][4]           ;
-; leds_data[2][14]                        ; Merged with leds_data[15][4]           ;
-; leds_data[13][8]                        ; Merged with leds_data[15][4]           ;
-; leds_data[2][12]                        ; Merged with leds_data[15][4]           ;
-; leds_data[9][14]                        ; Merged with leds_data[15][4]           ;
-; leds_data[9][12]                        ; Merged with leds_data[15][4]           ;
-; leds_data[13][6]                        ; Merged with leds_data[15][4]           ;
-; leds_data[9][10]                        ; Merged with leds_data[15][4]           ;
-; leds_data[9][8]                         ; Merged with leds_data[15][4]           ;
-; leds_data[13][4]                        ; Merged with leds_data[15][4]           ;
-; leds_data[1][12]                        ; Merged with leds_data[15][4]           ;
-; leds_data[15][2]                        ; Merged with leds_data[15][4]           ;
-; leds_data[9][4]                         ; Merged with leds_data[15][4]           ;
-; leds_data[13][0]                        ; Merged with leds_data[15][4]           ;
-; leds_data[0][12]                        ; Merged with leds_data[15][4]           ;
-; leds_data[8][14]                        ; Merged with leds_data[15][4]           ;
-; leds_data[15][0]                        ; Merged with leds_data[15][4]           ;
-; leds_data[8][12]                        ; Merged with leds_data[15][4]           ;
-; leds_data[12][14]                       ; Merged with leds_data[15][4]           ;
-; leds_data[8][10]                        ; Merged with leds_data[15][4]           ;
-; leds_data[8][8]                         ; Merged with leds_data[15][4]           ;
-; leds_data[15][1]                        ; Merged with leds_data[15][4]           ;
-; leds_data[13][1]                        ; Merged with leds_data[15][4]           ;
-; leds_data[16][14]                       ; Merged with leds_data[16][15]          ;
-; leds_data[16][11]                       ; Merged with leds_data[16][15]          ;
-; leds_data[15][14]                       ; Merged with leds_data[15][15]          ;
-; leds_data[15][4]                        ; Merged with leds_data[15][15]          ;
-; leds_data[16][15]                       ; Stuck at GND due to stuck port data_in ;
-; leds_data[15][15]                       ; Stuck at VCC due to stuck port data_in ;
-; led_act[0]                              ; Stuck at GND due to stuck port data_in ;
-; led_act[4]                              ; Merged with display:display|led_act[4] ;
-; Total Number of Removed Registers = 274 ;                                        ;
-+-----------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; pr[6,14]                               ; Merged with pc[2]                      ;
+; pc[22]                                 ; Merged with pc[2]                      ;
+; pr[2,22]                               ; Merged with pc[2]                      ;
+; pc[18]                                 ; Merged with pc[2]                      ;
+; pr[10]                                 ; Merged with pc[2]                      ;
+; pc[10]                                 ; Merged with pc[2]                      ;
+; pr[18]                                 ; Merged with pc[2]                      ;
+; pc[26]                                 ; Merged with pc[2]                      ;
+; pr[26]                                 ; Merged with pc[2]                      ;
+; pc[16]                                 ; Merged with pc[2]                      ;
+; pr[4]                                  ; Merged with pc[2]                      ;
+; pc[8]                                  ; Merged with pc[2]                      ;
+; pr[8]                                  ; Merged with pc[2]                      ;
+; pc[20]                                 ; Merged with pc[2]                      ;
+; pr[12]                                 ; Merged with pc[2]                      ;
+; pc[4]                                  ; Merged with pc[2]                      ;
+; pr[16]                                 ; Merged with pc[2]                      ;
+; pc[24]                                 ; Merged with pc[2]                      ;
+; pr[20]                                 ; Merged with pc[2]                      ;
+; pc[12]                                 ; Merged with pc[2]                      ;
+; pr[24]                                 ; Merged with pc[2]                      ;
+; pc[28]                                 ; Merged with pc[2]                      ;
+; pr[28,31]                              ; Merged with pc[2]                      ;
+; pc[7,15]                               ; Merged with pc[2]                      ;
+; pr[3]                                  ; Merged with pc[2]                      ;
+; pc[17]                                 ; Merged with pc[2]                      ;
+; pr[5]                                  ; Merged with pc[2]                      ;
+; pc[3]                                  ; Merged with pc[2]                      ;
+; pr[7]                                  ; Merged with pc[2]                      ;
+; pc[19]                                 ; Merged with pc[2]                      ;
+; pr[9]                                  ; Merged with pc[2]                      ;
+; pc[9]                                  ; Merged with pc[2]                      ;
+; pr[11]                                 ; Merged with pc[2]                      ;
+; pc[21]                                 ; Merged with pc[2]                      ;
+; pr[13,15]                              ; Merged with pc[2]                      ;
+; pc[23]                                 ; Merged with pc[2]                      ;
+; pr[17]                                 ; Merged with pc[2]                      ;
+; pc[11]                                 ; Merged with pc[2]                      ;
+; pr[19]                                 ; Merged with pc[2]                      ;
+; pc[25]                                 ; Merged with pc[2]                      ;
+; pr[21]                                 ; Merged with pc[2]                      ;
+; pc[5]                                  ; Merged with pc[2]                      ;
+; pr[23]                                 ; Merged with pc[2]                      ;
+; pc[27]                                 ; Merged with pc[2]                      ;
+; pr[25]                                 ; Merged with pc[2]                      ;
+; pc[13]                                 ; Merged with pc[2]                      ;
+; pr[27]                                 ; Merged with pc[2]                      ;
+; pc[29,31]                              ; Merged with pc[2]                      ;
+; pr[29]                                 ; Merged with pc[2]                      ;
+; pc[6,14,30]                            ; Merged with pc[2]                      ;
+; pr[30]                                 ; Merged with pc[2]                      ;
+; led_act[0]                             ; Stuck at GND due to stuck port data_in ;
+; pc[2]                                  ; Stuck at GND due to stuck port data_in ;
+; led_act[4]                             ; Merged with display:display|led_act[4] ;
+; Total Number of Removed Registers = 62 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -509,12 +302,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 91    ;
+; Total registers                              ; 115   ;
 ; Number of registers using Synchronous Clear  ; 64    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 9     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 13    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -528,7 +321,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; display:display|y2                     ; 1       ;
 ; display:display|y3                     ; 1       ;
 ; display:display|y4                     ; 1       ;
-; Total number of inverted registers = 4 ;         ;
+; leds_data[3]                           ; 7       ;
+; Total number of inverted registers = 5 ;         ;
 +----------------------------------------+---------+
 
 
@@ -538,7 +332,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |led_matrix|display:display|led_act ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 27 LEs               ; 0 LEs                  ; No         ; |led_matrix|pc                      ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |led_matrix|pr                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |led_matrix ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; ROWS           ; 4     ; Signed Integer                                    ;
+; COLUMNS        ; 4     ; Signed Integer                                    ;
+; PIXELS         ; 16    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------------------------------------+
@@ -568,7 +376,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -578,7 +386,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri Feb 23 16:47:36 2024
+    Info: Processing started: Fri Feb 23 21:12:58 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off led_matrix -c led_matrix
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file led_matrix.v
@@ -594,10 +402,12 @@ Info (12021): Found 2 design units, including 2 entities, in source file debounc
 Info (12021): Found 1 design units, including 1 entities, in source file frequency_divider_100_hz.v
     Info (12023): Found entity 1: frequency_divider_100_Hz
 Info (12127): Elaborating entity "led_matrix" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at led_matrix.v(32): object "first_clk" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at led_matrix.v(39): object "frame" assigned a value but never read
 Info (12128): Elaborating entity "frequency_divider_100_Hz" for hierarchy "frequency_divider_100_Hz:frequency_divider_100_Hz"
 Info (12128): Elaborating entity "frequency_divider_1_second" for hierarchy "frequency_divider_1_second:frequency_divider_1_second"
-Info (12128): Elaborating entity "DeBounce" for hierarchy "DeBounce:DeBounce"
-Info (12128): Elaborating entity "my_dff" for hierarchy "DeBounce:DeBounce|my_dff:d0"
+Info (12128): Elaborating entity "DeBounce" for hierarchy "DeBounce:DeBounce_down"
+Info (12128): Elaborating entity "my_dff" for hierarchy "DeBounce:DeBounce_down|my_dff:d0"
 Warning (12125): Using design file display.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: display
 Info (12128): Elaborating entity "display" for hierarchy "display:display"
@@ -606,14 +416,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 142 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
+Info (21057): Implemented 361 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 131 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info (21061): Implemented 347 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
     Info: Peak virtual memory: 4622 megabytes
-    Info: Processing ended: Fri Feb 23 16:47:39 2024
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Fri Feb 23 21:13:02 2024
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
 
 

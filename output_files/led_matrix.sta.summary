@@ -2,76 +2,76 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'DeBounce:DeBounce_down|my_dff:d1|Q'
+Slack : -6.517
+TNS   : -111.355
+
 Type  : Slow 1200mV 85C Model Setup 'clk_in'
-Slack : -4.004
-TNS   : -229.454
+Slack : -4.067
+TNS   : -231.198
 
 Type  : Slow 1200mV 85C Model Setup 'frequency_divider_100_Hz:frequency_divider_100_Hz|slow_clk'
-Slack : -1.438
-TNS   : -15.099
-
-Type  : Slow 1200mV 85C Model Setup 'DeBounce:DeBounce|my_dff:d1|Q'
-Slack : -1.160
-TNS   : -4.294
+Slack : -3.201
+TNS   : -18.172
 
 Type  : Slow 1200mV 85C Model Setup 'frequency_divider_1_second:frequency_divider_1_second|slow_clk'
-Slack : 0.039
-TNS   : 0.000
+Slack : -2.147
+TNS   : -7.229
 
 Type  : Slow 1200mV 85C Model Hold 'frequency_divider_1_second:frequency_divider_1_second|slow_clk'
-Slack : 0.017
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'DeBounce:DeBounce|my_dff:d1|Q'
-Slack : 0.455
-TNS   : 0.000
+Slack : -0.075
+TNS   : -0.075
 
 Type  : Slow 1200mV 85C Model Hold 'frequency_divider_100_Hz:frequency_divider_100_Hz|slow_clk'
-Slack : 0.455
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'DeBounce:DeBounce_down|my_dff:d1|Q'
+Slack : 0.454
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk_in'
-Slack : 0.625
+Slack : 0.624
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_in'
 Slack : -3.000
 TNS   : -101.142
 
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DeBounce:DeBounce_down|my_dff:d1|Q'
+Slack : -1.487
+TNS   : -29.740
+
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'frequency_divider_100_Hz:frequency_divider_100_Hz|slow_clk'
 Slack : -1.487
 TNS   : -25.279
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DeBounce:DeBounce|my_dff:d1|Q'
-Slack : -1.487
-TNS   : -7.435
-
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'frequency_divider_1_second:frequency_divider_1_second|slow_clk'
 Slack : -1.487
-TNS   : -4.461
+TNS   : -17.844
+
+Type  : Slow 1200mV 0C Model Setup 'DeBounce:DeBounce_down|my_dff:d1|Q'
+Slack : -6.162
+TNS   : -103.139
 
 Type  : Slow 1200mV 0C Model Setup 'clk_in'
-Slack : -3.672
-TNS   : -209.678
+Slack : -3.734
+TNS   : -211.012
 
 Type  : Slow 1200mV 0C Model Setup 'frequency_divider_100_Hz:frequency_divider_100_Hz|slow_clk'
-Slack : -1.280
-TNS   : -12.921
-
-Type  : Slow 1200mV 0C Model Setup 'DeBounce:DeBounce|my_dff:d1|Q'
-Slack : -0.959
-TNS   : -3.412
+Slack : -2.982
+TNS   : -15.609
 
 Type  : Slow 1200mV 0C Model Setup 'frequency_divider_1_second:frequency_divider_1_second|slow_clk'
-Slack : 0.134
-TNS   : 0.000
+Slack : -1.845
+TNS   : -6.027
 
 Type  : Slow 1200mV 0C Model Hold 'frequency_divider_1_second:frequency_divider_1_second|slow_clk'
-Slack : 0.050
-TNS   : 0.000
+Slack : -0.034
+TNS   : -0.034
 
-Type  : Slow 1200mV 0C Model Hold 'DeBounce:DeBounce|my_dff:d1|Q'
-Slack : 0.403
+Type  : Slow 1200mV 0C Model Hold 'DeBounce:DeBounce_down|my_dff:d1|Q'
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'frequency_divider_100_Hz:frequency_divider_100_Hz|slow_clk'
@@ -79,47 +79,47 @@ Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_in'
-Slack : 0.554
+Slack : 0.557
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_in'
 Slack : -3.000
 TNS   : -101.142
 
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DeBounce:DeBounce_down|my_dff:d1|Q'
+Slack : -1.487
+TNS   : -29.783
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'frequency_divider_100_Hz:frequency_divider_100_Hz|slow_clk'
 Slack : -1.487
 TNS   : -25.279
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DeBounce:DeBounce|my_dff:d1|Q'
-Slack : -1.487
-TNS   : -7.435
-
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'frequency_divider_1_second:frequency_divider_1_second|slow_clk'
 Slack : -1.487
-TNS   : -4.461
+TNS   : -17.844
+
+Type  : Fast 1200mV 0C Model Setup 'DeBounce:DeBounce_down|my_dff:d1|Q'
+Slack : -2.226
+TNS   : -36.192
 
 Type  : Fast 1200mV 0C Model Setup 'clk_in'
-Slack : -1.035
-TNS   : -55.721
+Slack : -1.039
+TNS   : -55.791
 
 Type  : Fast 1200mV 0C Model Setup 'frequency_divider_100_Hz:frequency_divider_100_Hz|slow_clk'
-Slack : -0.064
-TNS   : -0.092
-
-Type  : Fast 1200mV 0C Model Setup 'DeBounce:DeBounce|my_dff:d1|Q'
-Slack : 0.059
-TNS   : 0.000
+Slack : -0.752
+TNS   : -0.827
 
 Type  : Fast 1200mV 0C Model Setup 'frequency_divider_1_second:frequency_divider_1_second|slow_clk'
-Slack : 0.290
-TNS   : 0.000
+Slack : -0.471
+TNS   : -1.410
 
 Type  : Fast 1200mV 0C Model Hold 'frequency_divider_1_second:frequency_divider_1_second|slow_clk'
-Slack : -0.054
-TNS   : -0.054
+Slack : -0.060
+TNS   : -0.060
 
-Type  : Fast 1200mV 0C Model Hold 'DeBounce:DeBounce|my_dff:d1|Q'
-Slack : 0.186
+Type  : Fast 1200mV 0C Model Hold 'DeBounce:DeBounce_down|my_dff:d1|Q'
+Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'frequency_divider_100_Hz:frequency_divider_100_Hz|slow_clk'
@@ -132,18 +132,18 @@ TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_in'
 Slack : -3.000
-TNS   : -73.470
+TNS   : -73.439
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DeBounce:DeBounce_down|my_dff:d1|Q'
+Slack : -1.000
+TNS   : -20.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'frequency_divider_100_Hz:frequency_divider_100_Hz|slow_clk'
 Slack : -1.000
 TNS   : -17.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DeBounce:DeBounce|my_dff:d1|Q'
-Slack : -1.000
-TNS   : -5.000
-
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'frequency_divider_1_second:frequency_divider_1_second|slow_clk'
 Slack : -1.000
-TNS   : -3.000
+TNS   : -12.000
 
 ------------------------------------------------------------
